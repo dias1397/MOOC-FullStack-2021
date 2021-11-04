@@ -1,0 +1,16 @@
+note over browser:
+Save button is clicked on form
+end note
+
+note over browser:
+Prevent the default handling of form submit
+Create new note and push to list of all notes
+Rerender notes list on page
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server->browser: HTTP status 201
+
+note over browser:
+Json data inserted to server
+end note
