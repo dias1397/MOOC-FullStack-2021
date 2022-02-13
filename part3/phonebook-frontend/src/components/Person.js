@@ -15,7 +15,7 @@ const Person = ({ person, persons, setPersons, setMessage, setIsError }) => {
                 })
                 .catch(err => {
                     setPersons(persons.filter(p => p.id !== person.id))
-                    setMessage(`Information of ${person.name} has already been removed from the server`);
+                    setMessage(err.response.data.error);
                     setIsError(true);
                     setTimeout(() => {
                         setMessage(null)

@@ -49,7 +49,8 @@ const App = () => {
                         }, 5000)
                     })
                     .catch(error => {
-                        setMessage(`Unable to update ${existingPerson.name}`);
+                        console.log(error)
+                        setMessage(error.response.data.error);
                         setIsError(true);
                         setTimeout(() => {
                             setMessage(null)
@@ -70,7 +71,7 @@ const App = () => {
                     }, 5000)
                 })
                 .catch(error => {
-                    setMessage(`Unable to update ${person.name}`);
+                    setMessage(error.response.data.error);
                     setIsError(true);
                     setTimeout(() => {
                         setMessage(null)
